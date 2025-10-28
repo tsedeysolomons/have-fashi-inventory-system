@@ -1,3 +1,6 @@
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import XIcon from "@mui/icons-material/X";
 export default function Footer() {
   return (
     <footer className="bg-card border-t border-border">
@@ -5,9 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-serif font-bold text-primary mb-4">Have Fashion</h3>
+            <h3 className="text-xl font-serif font-bold text-primary mb-4">
+              Have Fashion
+            </h3>
             <p className="text-muted-foreground text-sm">
-              Premium menswear for the discerning gentleman. Crafted with excellence, worn with confidence.
+              Premium menswear for the discerning gentleman. Crafted with
+              excellence, worn with confidence.
             </p>
           </div>
 
@@ -76,11 +82,6 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition">
                   Privacy Policy
                 </a>
               </li>
@@ -95,20 +96,34 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-muted-foreground text-sm">© 2025 Have Fashion. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm">
+            © 2025 Have Fashion. All rights reserved.
+          </p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-muted-foreground hover:text-primary transition text-sm">
+            <a
+              href="#"
+              className="text-muted-foreground hover:text-primary transition text-sm"
+            >
+              <InstagramIcon />
               Instagram
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition text-sm">
+            <a
+              href="#"
+              className="text-muted-foreground hover:text-primary transition text-sm"
+            >
+              <FacebookIcon />
               Facebook
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition text-sm">
+            <a
+              href="#"
+              className="text-muted-foreground hover:text-primary transition text-sm"
+            >
+              <XIcon />
               Twitter
             </a>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
