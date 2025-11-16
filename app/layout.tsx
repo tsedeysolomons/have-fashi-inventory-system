@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Geist } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+import { Playfair_Display, Geist } from 'next/font/google'
 import { CartProvider } from "@/lib/cart-context"
 import "./globals.css"
 
@@ -23,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geist.className} font-sans antialiased`}>
         <CartProvider>{children}</CartProvider>
-        <Analytics />
       </body>
     </html>
   )

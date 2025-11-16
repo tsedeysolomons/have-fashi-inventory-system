@@ -1,15 +1,18 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, Search, User, ChevronDown } from "lucide-react"
+import { Menu, X, Search, User, ChevronDown } from 'lucide-react'
 import Link from "next/link"
+import { useRouter } from 'next/navigation'
 import AuthModal from "./auth-modal"
 import CartIcon from "./cart-icon"
 
 export default function Header() {
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
 
   const navItems = [
     {
@@ -493,6 +496,14 @@ export default function Header() {
     setActiveDropdown(null)
   }
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`)
+      setSearchQuery("")
+    }
+  }
+
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50">
       {/* Promo Bar */}
@@ -509,16 +520,18 @@ export default function Header() {
           </Link>
 
           {/* Search Bar - Hidden on mobile */}
-          <div className="hidden md:flex flex-1 mx-8">
+          <form onSubmit={handleSearch} className="hidden md:flex flex-1 mx-8">
             <div className="w-full bg-card border border-border rounded-lg px-4 py-2 flex items-center gap-2">
               <Search className="w-5 h-5 text-muted-foreground" />
               <input
                 type="text"
                 placeholder="What are you looking for?"
                 className="bg-transparent outline-none w-full text-foreground placeholder-muted-foreground"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-          </div>
+          </form>
 
           {/* Right Icons */}
           <div className="flex items-center gap-4">

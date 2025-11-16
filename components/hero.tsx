@@ -1,4 +1,10 @@
+"use client"
+
+import { useRouter } from 'next/navigation'
+
 export default function Hero() {
+  const router = useRouter()
+
   return (
     <section className="relative h-screen bg-gradient-to-b from-card to-background flex items-center justify-center overflow-hidden">
       {/* Background Pattern */}
@@ -17,10 +23,16 @@ export default function Hero() {
           excellence.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+          <button
+            onClick={() => router.push("/shop")}
+            className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
             Shop Now
           </button>
-          <button className="border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition">
+          <button
+            onClick={() => router.push("/explore")}
+            className="border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition"
+          >
             Explore Collection
           </button>
         </div>
