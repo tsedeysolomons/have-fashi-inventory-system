@@ -1,3 +1,5 @@
+"use client";
+
 import { RotateCcw, AlertCircle, Check, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/header";
