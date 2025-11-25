@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Menu, X, Search, User, ChevronDown } from 'lucide-react'
-import Link from "next/link"
-import { useRouter } from 'next/navigation'
-import AuthModal from "./auth-modal"
-import CartIcon from "./cart-icon"
+import { useState } from "react";
+import { Menu, X, Search, User, ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import AuthModal from "./auth-modal";
+import CartIcon from "./cart-icon";
 
 export default function Header() {
-  const router = useRouter()
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const navItems = [
     {
@@ -24,27 +24,60 @@ export default function Header() {
           {
             title: "LATEST ARRIVALS",
             items: [
-              { name: "New Suits", description: "Fresh tailored suits just arrived" },
-              { name: "New Shirts", description: "Latest premium dress shirts" },
-              { name: "New Accessories", description: "Trending accessories and essentials" },
-              { name: "New Footwear", description: "Latest luxury shoe collection" },
-              { name: "New Outerwear", description: "Seasonal blazers and coats" },
+              {
+                name: "New Suits",
+                description: "Fresh tailored suits just arrived",
+              },
+              {
+                name: "New Shirts",
+                description: "Latest premium dress shirts",
+              },
+              {
+                name: "New Accessories",
+                description: "Trending accessories and essentials",
+              },
+              {
+                name: "New Footwear",
+                description: "Latest luxury shoe collection",
+              },
+              {
+                name: "New Outerwear",
+                description: "Seasonal blazers and coats",
+              },
             ],
           },
           {
             title: "TRENDING NOW",
             items: [
-              { name: "Best Sellers", description: "Most popular items this season" },
-              { name: "Limited Edition", description: "Exclusive pieces available now" },
-              { name: "Flash Deals", description: "Special offers on selected items" },
-              { name: "Coming Soon", description: "Preview upcoming collections" },
+              {
+                name: "Best Sellers",
+                description: "Most popular items this season",
+              },
+              {
+                name: "Limited Edition",
+                description: "Exclusive pieces available now",
+              },
+              {
+                name: "Flash Deals",
+                description: "Special offers on selected items",
+              },
+              {
+                name: "Coming Soon",
+                description: "Preview upcoming collections",
+              },
             ],
           },
           {
             title: "COLLECTIONS",
             items: [
-              { name: "Spring Collection", description: "Light and fresh seasonal wear" },
-              { name: "Premium Line", description: "Our most luxurious offerings" },
+              {
+                name: "Spring Collection",
+                description: "Light and fresh seasonal wear",
+              },
+              {
+                name: "Premium Line",
+                description: "Our most luxurious offerings",
+              },
               { name: "Essentials", description: "Timeless wardrobe staples" },
             ],
           },
@@ -52,7 +85,8 @@ export default function Header() {
         featured: {
           title: "SPRING COLLECTION",
           cta: "EXPLORE NOW",
-          image: "url('https://images.unsplash.com/photo-1591047990852-258f408cde20?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1591047990852-258f408cde20?w=400&h=300&fit=crop')",
         },
       },
     },
@@ -65,32 +99,74 @@ export default function Header() {
           {
             title: "WEDDING OUTFIT",
             items: [
-              { name: "Wedding Suits", description: "Tailored suits for the perfect wedding day" },
-              { name: "Wedding Shirts", description: "Premium dress shirts for formal occasions" },
-              { name: "Wedding Ties & Pocketsquares", description: "Elegant accessories to complete your look" },
-              { name: "Wedding Shoes", description: "Polished footwear for formal events" },
-              { name: "Wedding Accessories", description: "Cufflinks, braces, and more" },
-              { name: "Wedding Day Guest", description: "Sophisticated guest attire" },
-              { name: "Evening Guest", description: "Evening wear for celebrations" },
+              {
+                name: "Wedding Suits",
+                description: "Tailored suits for the perfect wedding day",
+              },
+              {
+                name: "Wedding Shirts",
+                description: "Premium dress shirts for formal occasions",
+              },
+              {
+                name: "Wedding Ties & Pocketsquares",
+                description: "Elegant accessories to complete your look",
+              },
+              {
+                name: "Wedding Shoes",
+                description: "Polished footwear for formal events",
+              },
+              {
+                name: "Wedding Accessories",
+                description: "Cufflinks, braces, and more",
+              },
+              {
+                name: "Wedding Day Guest",
+                description: "Sophisticated guest attire",
+              },
+              {
+                name: "Evening Guest",
+                description: "Evening wear for celebrations",
+              },
             ],
           },
           {
             title: "HIRE",
             items: [
-              { name: "Kilt Hire", description: "Traditional Scottish formal wear" },
+              {
+                name: "Kilt Hire",
+                description: "Traditional Scottish formal wear",
+              },
               { name: "Tuxedo Hire", description: "Classic black-tie tuxedos" },
-              { name: "Morning Suits & Tailcoat Hire", description: "Daytime formal wear" },
-              { name: "Custom Kilts & Highlandwear", description: "Personalized Highland dress" },
+              {
+                name: "Morning Suits & Tailcoat Hire",
+                description: "Daytime formal wear",
+              },
+              {
+                name: "Custom Kilts & Highlandwear",
+                description: "Personalized Highland dress",
+              },
             ],
           },
           {
             title: "COLOUR SCHEME",
             items: [
-              { name: "Something Blue", description: "Classic blue formal wear" },
+              {
+                name: "Something Blue",
+                description: "Classic blue formal wear",
+              },
               { name: "Fresh Greens", description: "Modern green tones" },
-              { name: "Natural Neutrals", description: "Timeless neutral shades" },
-              { name: "Romantic Pinks & Purples", description: "Elegant pastel options" },
-              { name: "Noir Blanc", description: "Sophisticated black and white" },
+              {
+                name: "Natural Neutrals",
+                description: "Timeless neutral shades",
+              },
+              {
+                name: "Romantic Pinks & Purples",
+                description: "Elegant pastel options",
+              },
+              {
+                name: "Noir Blanc",
+                description: "Sophisticated black and white",
+              },
             ],
           },
           {
@@ -98,14 +174,18 @@ export default function Header() {
             items: [
               { name: "Black Tie", description: "Formal evening wear" },
               { name: "Tweed", description: "Classic country style" },
-              { name: "Destination Weddings", description: "Travel-friendly formal wear" },
+              {
+                name: "Destination Weddings",
+                description: "Travel-friendly formal wear",
+              },
             ],
           },
         ],
         featured: {
           title: "AUTUMN GROOMS",
           cta: "SHOP NOW",
-          image: "url('https://images.unsplash.com/photo-1591047990852-258f408cde20?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1591047990852-258f408cde20?w=400&h=300&fit=crop')",
         },
       },
     },
@@ -118,35 +198,66 @@ export default function Header() {
           {
             title: "SUIT TYPES",
             items: [
-              { name: "Two-Piece Suits", description: "Classic jacket and trousers combinations" },
-              { name: "Three-Piece Suits", description: "Complete look with matching waistcoat" },
-              { name: "Double-Breasted Suits", description: "Bold and sophisticated styling" },
-              { name: "Single-Breasted Suits", description: "Timeless and versatile designs" },
+              {
+                name: "Two-Piece Suits",
+                description: "Classic jacket and trousers combinations",
+              },
+              {
+                name: "Three-Piece Suits",
+                description: "Complete look with matching waistcoat",
+              },
+              {
+                name: "Double-Breasted Suits",
+                description: "Bold and sophisticated styling",
+              },
+              {
+                name: "Single-Breasted Suits",
+                description: "Timeless and versatile designs",
+              },
             ],
           },
           {
             title: "SUIT STYLES",
             items: [
-              { name: "Business Suits", description: "Professional corporate wear" },
-              { name: "Casual Suits", description: "Relaxed yet refined tailoring" },
-              { name: "Slim Fit", description: "Contemporary fitted silhouette" },
+              {
+                name: "Business Suits",
+                description: "Professional corporate wear",
+              },
+              {
+                name: "Casual Suits",
+                description: "Relaxed yet refined tailoring",
+              },
+              {
+                name: "Slim Fit",
+                description: "Contemporary fitted silhouette",
+              },
               { name: "Regular Fit", description: "Classic comfortable cut" },
             ],
           },
           {
             title: "MATERIALS",
             items: [
-              { name: "Wool Suits", description: "Premium wool blends for durability" },
+              {
+                name: "Wool Suits",
+                description: "Premium wool blends for durability",
+              },
               { name: "Linen Suits", description: "Breathable summer options" },
-              { name: "Cotton Blends", description: "Comfortable everyday wear" },
-              { name: "Luxury Fabrics", description: "Finest Italian and British materials" },
+              {
+                name: "Cotton Blends",
+                description: "Comfortable everyday wear",
+              },
+              {
+                name: "Luxury Fabrics",
+                description: "Finest Italian and British materials",
+              },
             ],
           },
         ],
         featured: {
           title: "PREMIUM SUITS",
           cta: "VIEW COLLECTION",
-          image: "url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=300&fit=crop')",
         },
       },
     },
@@ -159,117 +270,66 @@ export default function Header() {
           {
             title: "DRESS SHIRTS",
             items: [
-              { name: "White Dress Shirts", description: "Essential formal white shirts" },
-              { name: "Colored Shirts", description: "Sophisticated color options" },
-              { name: "Patterned Shirts", description: "Stripes, checks, and prints" },
-              { name: "Casual Shirts", description: "Smart casual shirt collection" },
+              {
+                name: "White Dress Shirts",
+                description: "Essential formal white shirts",
+              },
+              {
+                name: "Colored Shirts",
+                description: "Sophisticated color options",
+              },
+              {
+                name: "Patterned Shirts",
+                description: "Stripes, checks, and prints",
+              },
+              {
+                name: "Casual Shirts",
+                description: "Smart casual shirt collection",
+              },
             ],
           },
           {
             title: "TIES & ACCESSORIES",
             items: [
               { name: "Silk Ties", description: "Premium silk neckwear" },
-              { name: "Bow Ties", description: "Formal and casual bow tie styles" },
-              { name: "Pocket Squares", description: "Elegant finishing touches" },
+              {
+                name: "Bow Ties",
+                description: "Formal and casual bow tie styles",
+              },
+              {
+                name: "Pocket Squares",
+                description: "Elegant finishing touches",
+              },
               { name: "Cufflinks", description: "Luxury cuff accessories" },
             ],
           },
           {
             title: "COLLAR STYLES",
             items: [
-              { name: "Spread Collar", description: "Wide and modern collar design" },
-              { name: "Point Collar", description: "Classic and versatile style" },
-              { name: "Button-Down Collar", description: "Casual yet refined look" },
-              { name: "Wing Collar", description: "Formal evening wear collar" },
+              {
+                name: "Spread Collar",
+                description: "Wide and modern collar design",
+              },
+              {
+                name: "Point Collar",
+                description: "Classic and versatile style",
+              },
+              {
+                name: "Button-Down Collar",
+                description: "Casual yet refined look",
+              },
+              {
+                name: "Wing Collar",
+                description: "Formal evening wear collar",
+              },
             ],
           },
         ],
         featured: {
           title: "SHIRT & TIE SETS",
           cta: "SHOP SETS",
-          image: "url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=300&fit=crop')",
-        },
-      },
-    },
-    {
-      label: "BLAZERS & COATS",
-      href: "#",
-      description: "Structured blazers and outerwear",
-      submenu: {
-        columns: [
-          {
-            title: "BLAZERS",
-            items: [
-              { name: "Sport Blazers", description: "Versatile casual blazers" },
-              { name: "Formal Blazers", description: "Structured formal wear" },
-              { name: "Casual Blazers", description: "Smart casual styling" },
-              { name: "Patterned Blazers", description: "Tweed and textured options" },
-            ],
-          },
-          {
-            title: "OUTERWEAR",
-            items: [
-              { name: "Overcoats", description: "Classic long coats for winter" },
-              { name: "Topcoats", description: "Elegant mid-length outerwear" },
-              { name: "Trench Coats", description: "Timeless trench coat styles" },
-              { name: "Casual Jackets", description: "Relaxed jacket collection" },
-            ],
-          },
-          {
-            title: "MATERIALS",
-            items: [
-              { name: "Wool Blazers", description: "Premium wool construction" },
-              { name: "Cotton Blazers", description: "Breathable cotton options" },
-              { name: "Linen Blazers", description: "Summer-weight blazers" },
-              { name: "Blended Fabrics", description: "Durable fabric combinations" },
-            ],
-          },
-        ],
-        featured: {
-          title: "WINTER COLLECTION",
-          cta: "EXPLORE",
-          image: "url('https://images.unsplash.com/photo-1539533057440-7bf6b1c91c5f?w=400&h=300&fit=crop')",
-        },
-      },
-    },
-    {
-      label: "SHOES",
-      href: "#",
-      description: "Luxury footwear for formal and casual wear",
-      submenu: {
-        columns: [
-          {
-            title: "FORMAL SHOES",
-            items: [
-              { name: "Oxford Shoes", description: "Classic formal dress shoes" },
-              { name: "Derby Shoes", description: "Elegant lace-up options" },
-              { name: "Loafers", description: "Sophisticated slip-on styles" },
-              { name: "Brogues", description: "Detailed formal footwear" },
-            ],
-          },
-          {
-            title: "CASUAL SHOES",
-            items: [
-              { name: "Sneakers", description: "Premium casual sneakers" },
-              { name: "Boat Shoes", description: "Relaxed summer footwear" },
-              { name: "Chukka Boots", description: "Versatile ankle boots" },
-              { name: "Slip-Ons", description: "Easy casual shoes" },
-            ],
-          },
-          {
-            title: "MATERIALS & COLORS",
-            items: [
-              { name: "Leather Shoes", description: "Premium leather construction" },
-              { name: "Suede Shoes", description: "Soft suede options" },
-              { name: "Black Shoes", description: "Classic black formal wear" },
-              { name: "Brown Shoes", description: "Versatile brown tones" },
-            ],
-          },
-        ],
-        featured: {
-          title: "LUXURY FOOTWEAR",
-          cta: "DISCOVER",
-          image: "url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=300&fit=crop')",
         },
       },
     },
@@ -284,7 +344,10 @@ export default function Header() {
             items: [
               { name: "Formal Trousers", description: "Tailored formal wear" },
               { name: "Chinos", description: "Smart casual trousers" },
-              { name: "Dress Trousers", description: "Professional business wear" },
+              {
+                name: "Dress Trousers",
+                description: "Professional business wear",
+              },
               { name: "Casual Trousers", description: "Relaxed everyday wear" },
             ],
           },
@@ -300,7 +363,10 @@ export default function Header() {
           {
             title: "COLORS & PATTERNS",
             items: [
-              { name: "Black Trousers", description: "Classic black formal wear" },
+              {
+                name: "Black Trousers",
+                description: "Classic black formal wear",
+              },
               { name: "Navy Trousers", description: "Versatile navy options" },
               { name: "Grey Trousers", description: "Neutral grey tones" },
               { name: "Patterned Trousers", description: "Checks and stripes" },
@@ -310,7 +376,8 @@ export default function Header() {
         featured: {
           title: "TAILORED TROUSERS",
           cta: "SHOP NOW",
-          image: "url('https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=300&fit=crop')",
         },
       },
     },
@@ -323,8 +390,14 @@ export default function Header() {
           {
             title: "CASUAL TOPS",
             items: [
-              { name: "Casual Shirts", description: "Relaxed button-up shirts" },
-              { name: "Polo Shirts", description: "Classic polo shirt collection" },
+              {
+                name: "Casual Shirts",
+                description: "Relaxed button-up shirts",
+              },
+              {
+                name: "Polo Shirts",
+                description: "Classic polo shirt collection",
+              },
               { name: "T-Shirts", description: "Premium quality t-shirts" },
               { name: "Sweaters", description: "Cozy knit sweaters" },
             ],
@@ -351,7 +424,8 @@ export default function Header() {
         featured: {
           title: "WEEKEND WEAR",
           cta: "BROWSE",
-          image: "url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop')",
         },
       },
     },
@@ -376,13 +450,19 @@ export default function Header() {
               { name: "Leather Belts", description: "Premium leather belts" },
               { name: "Dress Belts", description: "Formal belt collection" },
               { name: "Scarves", description: "Silk and wool scarves" },
-              { name: "Pocket Squares", description: "Elegant finishing touches" },
+              {
+                name: "Pocket Squares",
+                description: "Elegant finishing touches",
+              },
             ],
           },
           {
             title: "BAGS & HATS",
             items: [
-              { name: "Briefcases", description: "Professional leather briefcases" },
+              {
+                name: "Briefcases",
+                description: "Professional leather briefcases",
+              },
               { name: "Messenger Bags", description: "Stylish messenger bags" },
               { name: "Hats", description: "Formal and casual hats" },
               { name: "Gloves", description: "Premium leather gloves" },
@@ -392,7 +472,8 @@ export default function Header() {
         featured: {
           title: "ACCESSORY SETS",
           cta: "COMPLETE LOOK",
-          image: "url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=300&fit=crop')",
         },
       },
     },
@@ -405,104 +486,97 @@ export default function Header() {
           {
             title: "TAILORING SERVICES",
             items: [
-              { name: "Suit Alterations", description: "Professional suit tailoring" },
+              {
+                name: "Suit Alterations",
+                description: "Professional suit tailoring",
+              },
               { name: "Hemming", description: "Trouser and shirt hemming" },
-              { name: "Sleeve Adjustments", description: "Perfect sleeve length" },
-              { name: "Custom Tailoring", description: "Bespoke custom tailoring" },
+              {
+                name: "Sleeve Adjustments",
+                description: "Perfect sleeve length",
+              },
+              {
+                name: "Custom Tailoring",
+                description: "Bespoke custom tailoring",
+              },
             ],
           },
           {
             title: "STYLING SERVICES",
             items: [
-              { name: "Personal Styling", description: "One-on-one styling consultation" },
-              { name: "Wardrobe Planning", description: "Complete wardrobe strategy" },
-              { name: "Color Consultation", description: "Find your perfect colors" },
-              { name: "Occasion Styling", description: "Styling for special events" },
+              {
+                name: "Personal Styling",
+                description: "One-on-one styling consultation",
+              },
+              {
+                name: "Wardrobe Planning",
+                description: "Complete wardrobe strategy",
+              },
+              {
+                name: "Color Consultation",
+                description: "Find your perfect colors",
+              },
+              {
+                name: "Occasion Styling",
+                description: "Styling for special events",
+              },
             ],
           },
           {
             title: "SPECIAL SERVICES",
             items: [
-              { name: "Wedding Planning", description: "Complete wedding coordination" },
-              { name: "Corporate Packages", description: "Team uniform solutions" },
-              { name: "Gift Wrapping", description: "Premium gift wrapping service" },
-              { name: "Personal Shopping", description: "Curated shopping experience" },
+              {
+                name: "Wedding Planning",
+                description: "Complete wedding coordination",
+              },
+              {
+                name: "Corporate Packages",
+                description: "Team uniform solutions",
+              },
+              {
+                name: "Gift Wrapping",
+                description: "Premium gift wrapping service",
+              },
+              {
+                name: "Personal Shopping",
+                description: "Curated shopping experience",
+              },
             ],
           },
         ],
         featured: {
           title: "EXPERT SERVICES",
           cta: "BOOK NOW",
-          image: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop')",
+          image:
+            "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop')",
         },
       },
     },
-    {
-      label: "STYLE INSPIRATION",
-      href: "#",
-      description: "Discover styling tips and trends",
-      submenu: {
-        columns: [
-          {
-            title: "STYLE GUIDES",
-            items: [
-              { name: "How to Wear a Suit", description: "Complete suit styling guide" },
-              { name: "Formal Dress Code", description: "Understanding dress codes" },
-              { name: "Color Combinations", description: "Perfect color pairings" },
-              { name: "Accessory Styling", description: "Accessory coordination tips" },
-            ],
-          },
-          {
-            title: "TREND REPORTS",
-            items: [
-              { name: "Spring Trends", description: "Latest spring fashion trends" },
-              { name: "Summer Trends", description: "Hot summer style picks" },
-              { name: "Fall Trends", description: "Autumn fashion inspiration" },
-              { name: "Winter Trends", description: "Winter style essentials" },
-            ],
-          },
-          {
-            title: "LOOKBOOKS",
-            items: [
-              { name: "Business Casual", description: "Professional casual looks" },
-              { name: "Black Tie Events", description: "Formal event styling" },
-              { name: "Weekend Wear", description: "Casual weekend outfits" },
-              { name: "Travel Style", description: "Packing and travel tips" },
-            ],
-          },
-        ],
-        featured: {
-          title: "LATEST TRENDS",
-          cta: "READ MORE",
-          image: "url('https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=300&fit=crop')",
-        },
-      },
-    },
-  ]
+  ];
 
   const handleNavItemClick = (label: string, hasSubmenu: boolean) => {
     if (hasSubmenu) {
-      setActiveDropdown(activeDropdown === label ? null : label)
+      setActiveDropdown(activeDropdown === label ? null : label);
     }
-  }
+  };
 
   const handleMouseEnter = (label: string, hasSubmenu: boolean) => {
     if (hasSubmenu) {
-      setActiveDropdown(label)
+      setActiveDropdown(label);
     }
-  }
+  };
 
   const handleMouseLeave = () => {
-    setActiveDropdown(null)
-  }
+    setActiveDropdown(null);
+  };
 
   const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery)}`)
-      setSearchQuery("")
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery("");
     }
-  }
+  };
 
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50">
@@ -515,7 +589,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between mb-6">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition">
+          <Link
+            href="/"
+            className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition"
+          >
             Have Fashion
           </Link>
 
@@ -545,8 +622,15 @@ export default function Header() {
             <div className="hidden md:block">
               <CartIcon />
             </div>
-            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-foreground">
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-foreground"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -558,7 +642,9 @@ export default function Header() {
               <div
                 key={item.label}
                 className="relative"
-                onMouseEnter={() => handleMouseEnter(item.label, !!item.submenu)}
+                onMouseEnter={() =>
+                  handleMouseEnter(item.label, !!item.submenu)
+                }
                 onMouseLeave={handleMouseLeave}
               >
                 <button
@@ -568,7 +654,9 @@ export default function Header() {
                   <span className="group-hover:text-primary">{item.label}</span>
                   {item.submenu && (
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform ${activeDropdown === item.label ? "rotate-180" : ""}`}
+                      className={`w-4 h-4 transition-transform ${
+                        activeDropdown === item.label ? "rotate-180" : ""
+                      }`}
                     />
                   )}
                 </button>
@@ -594,17 +682,31 @@ export default function Header() {
                               </h3>
                               <ul className="space-y-3">
                                 {column.items.map((subitem) => (
-                                  <li key={typeof subitem === "string" ? subitem : subitem.name}>
+                                  <li
+                                    key={
+                                      typeof subitem === "string"
+                                        ? subitem
+                                        : subitem.name
+                                    }
+                                  >
                                     <a
                                       href="#"
                                       className="text-foreground text-sm hover:text-primary transition group/item"
-                                      title={typeof subitem === "string" ? "" : subitem.description}
+                                      title={
+                                        typeof subitem === "string"
+                                          ? ""
+                                          : subitem.description
+                                      }
                                     >
                                       <span className="group-hover/item:text-primary">
-                                        {typeof subitem === "string" ? subitem : subitem.name}
+                                        {typeof subitem === "string"
+                                          ? subitem
+                                          : subitem.name}
                                       </span>
                                       {typeof subitem !== "string" && (
-                                        <p className="text-xs text-muted-foreground mt-1">{subitem.description}</p>
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                          {subitem.description}
+                                        </p>
                                       )}
                                     </a>
                                   </li>
@@ -644,7 +746,10 @@ export default function Header() {
         </nav>
       </div>
 
-      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+      />
     </header>
-  )
+  );
 }

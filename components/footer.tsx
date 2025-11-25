@@ -28,11 +28,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-primary transition">
-                  Blazers
-                </Link>
-              </li>
-              <li>
                 <Link href="/accessories" className="hover:text-primary transition">
                   Accessories
                 </Link>
@@ -59,12 +54,7 @@ export default function Footer() {
                   Returns
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition">
-                  Size Guide
-                </Link>
-              </li>
-            </ul>
+              </ul>
           </div>
 
           {/* Company */}
@@ -74,11 +64,6 @@ export default function Footer() {
               <li>
                 <Link href="/about-us" className="hover:text-primary transition">
                   About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition">
-                  Blog
                 </Link>
               </li>
               <li>
