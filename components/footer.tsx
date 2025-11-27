@@ -93,6 +93,12 @@ export default function Footer() {
             <a href="#" className="text-muted-foreground hover:text-primary transition text-sm">
               Twitter
             </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition text-sm">
+              linkdin
+            </a>
+             <a href="#" className="text-muted-foreground hover:text-primary transition text-sm">
+              Telegram
+            </a>
           </div>
         </div>
       </div>

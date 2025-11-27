@@ -109,6 +109,9 @@ export default function AboutUsPage() {
               { name: "Marcus Sterling", role: "Founder & Creative Director", image: "/professional-man.jpg" },
               { name: "Alexander Chen", role: "Chief Operations Officer", image: "/professional-man.jpg" },
               { name: "James Mitchell", role: "Head of Customer Experience", image: "/professional-man.jpg" },
+              { name: "James Mitchell", role: "Head of Customer Experience", image: "/professional-man.jpg" },
+              { name: "James Mitchell", role: "Head of Customer Experience", image: "/professional-man.jpg" },
+              { name: "James Mitchell", role: "Head of Customer Experience", image: "/professional-man.jpg" },
             ].map((member, i) => (
               <div key={i} className="text-center">
                 <div className="bg-card border border-border rounded-lg overflow-hidden mb-4 h-64">

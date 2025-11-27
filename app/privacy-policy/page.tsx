@@ -110,6 +110,8 @@ export default function PrivacyPolicyPage() {
             <div className="bg-card border border-border rounded-lg p-6 mt-4 text-muted-foreground">
               <p className="mb-2">Email: privacy@havefashion.com</p>
               <p className="mb-2">Phone: +1 (555) 123-4567</p>
+              <p className="mb-2">telegram</p>
+              <p className="mb-2">facebook</p>
               <p>Address: 123 Fashion Ave, New York, NY 10001</p>
             </div>
           </div>
