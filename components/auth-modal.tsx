@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { X } from "lucide-react"
+import { useState } from "react";
+import { X } from "lucide-react";
 
 interface AuthModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
-  const [isSignUp, setIsSignUp] = useState(false)
+  const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -20,31 +20,41 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
     gender: "",
     workingArea: "",
     phoneNumber: "",
-  })
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
+    e.preventDefault();
+    console.log("Form submitted:", formData);
     // Handle form submission here
-  }
+  };
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-background border border-primary rounded-lg shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border bg-primary/5">
-          <h2 className="text-2xl font-serif font-bold text-primary">{isSignUp ? "Create Account" : "Sign In"}</h2>
-          <button onClick={onClose} className="text-foreground hover:text-primary transition">
+          <h2 className="text-2xl font-serif font-bold text-primary">
+            {isSignUp ? "Create Account" : "Sign In"}
+          </h2>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            title="Close"
+            className="text-foreground hover:text-primary transition"
+          >
             <X className="w-6 h-6" />
           </button>
         </div>
@@ -55,7 +65,9 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             <>
               {/* Full Name */}
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Full Name</label>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   name="fullName"
@@ -69,7 +81,9 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
               {/* Age */}
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Age</label>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Age
+                </label>
                 <input
                   type="number"
                   name="age"
@@ -83,8 +97,14 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
               {/* Gender */}
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Gender</label>
+                <label
+                  htmlFor="gender"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
+                  Gender
+                </label>
                 <select
+                  id="gender"
                   name="gender"
                   value={formData.gender}
                   onChange={handleInputChange}
@@ -100,7 +120,9 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
               {/* Working Area */}
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Working Area</label>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Working Area
+                </label>
                 <input
                   type="text"
                   name="workingArea"
@@ -114,14 +136,17 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
               {/* Phone Number */}
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Phone Number
+                </label>
                 <input
                   type="tel"
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleInputChange}
-                  placeholder="Enter your phone number"
-                  className="w-full px-4 py-2 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                  placeholder="Enter your phone number must be 10 digit"
+                  pattern="^(09|\+2519)\d{8}$"
+                  className="w-full px-4 py-2 border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                   required
                 />
               </div>
@@ -130,12 +155,15 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Email Address
+            </label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               placeholder="Enter your email"
               className="w-full px-4 py-2 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
               required
@@ -144,12 +172,16 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
           {/* Password */}
           <div>
-            <label className="block text-sm font-medium text-foreground mb-2">Password</label>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Password
+            </label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleInputChange}
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least 8 characters, including 1 uppercase letter, 1 lowercase letter, and 1 number"
               placeholder="Enter your password"
               className="w-full px-4 py-2 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
               required
@@ -169,12 +201,15 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         <div className="px-6 pb-6 text-center border-t border-border pt-4">
           <p className="text-sm text-muted-foreground">
             {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
-            <button onClick={() => setIsSignUp(!isSignUp)} className="text-primary font-semibold hover:underline">
+            <button
+              onClick={() => setIsSignUp(!isSignUp)}
+              className="text-primary font-semibold hover:underline"
+            >
               {isSignUp ? "Sign In" : "Sign Up"}
             </button>
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }
